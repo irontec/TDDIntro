@@ -3,14 +3,10 @@
     <h2>Books</h2>
     {% for book in books %}
         <div class="book">
-            <div class="name">{{ book.name }}</div>
+            <div class="name">{{ book.title }}</div>
             <div class="author">{{ book.author }}</div>
-            <div class="published-date">{{  book.published_date.format('Y-m-d') }}</div>
-            <div class="categories">
-                {% for category in book.categories %}
-                    <div class="category">{{ category }}</div>
-                {% endfor %}
-            </div>
+            <div class="published-date">{{ book.datePublished.format('Y-m-d') }}</div>
+            <div class="category">{{ book.category }}</div>
             <hr>
         </div>
     {% endfor %}
