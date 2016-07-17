@@ -6,3 +6,4 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), $config['doctrine']
 
 // 3rd party Providers.
 $app->register(new \Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider(), $config['doctrine']['orm']);
+$app->register(new \Knp\Provider\ConsoleServiceProvider(), $config['console']);

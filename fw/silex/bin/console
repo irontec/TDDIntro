@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Input\ArgvInput;
+
+set_time_limit(0);
+
+$loader = require __DIR__ . '/../../../vendor/autoload.php';
+
+$input = new ArgvInput();
+$env = $input->getParameterOption(['--env', '-e'], getenv('SILEX_ENV') ?: 'test');
+
+$app = require_once sprintf('%s/app/app%s.php', dirname(__DIR__), 'prod' === $env ? '' : '_' . $env);
+
+$console = $app["console"];
+
+require_once __DIR__ . '/../app/config/commands.php';
+
+$console->run($input);
