@@ -1,0 +1,18 @@
+filter:
+    excluded_paths:
+        - vendor/*
+        - tests/*
+build:
+    environment:
+        php: 5.6
+    tests:
+        override:
+            -
+                command: 'phpunit --coverage-clover=clover.xml'
+                coverage:
+                    file: 'clover.xml'
+                    format: 'clover'
+
+    dependencies:
+        before:
+            - cp fw/silex/app/config/parameters.php.dist fw/silex/app/config/parameters.php
