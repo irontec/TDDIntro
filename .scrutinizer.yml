@@ -16,3 +16,8 @@ build:
     dependencies:
         before:
             - cp fw/silex/app/config/parameters.php.dist fw/silex/app/config/parameters.php
+
+checks:
+    php:
+        code_rating: true
+        duplication: true
