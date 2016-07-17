@@ -3,12 +3,13 @@
 namespace TDDIntro\Domain\Entity;
 
 
-class Category
+class Category extends Entity
 {
     protected $name;
 
-    public function __construct($name)
+    public function __construct($id, $name)
     {
+        $this->id = $id;
         $this->name = $name;
     }
 

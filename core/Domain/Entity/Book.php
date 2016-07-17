@@ -2,7 +2,7 @@
 
 namespace TDDIntro\Domain\Entity;
 
-class Book
+class Book extends Entity
 {
     protected $title;
 
@@ -12,8 +12,9 @@ class Book
 
     protected $category;
 
-    public function __construct($title, $author, $datePublished, $category)
+    public function __construct($id, $title, $author, $datePublished, $category)
     {
+        $this->id = $id;
         $this->title = $title;
         $this->author = $author;
         $this->datePublished = $datePublished;

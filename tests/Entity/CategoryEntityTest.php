@@ -8,8 +8,9 @@ class CategoryEntityTest extends \PHPUnit_Framework_TestCase
 {
     public function testCategoryEntity()
     {
-        $book = new Category('programming');
+        $category = new Category(1, 'programming');
 
-        $this->assertEquals('programming', $book->getName());
+        $this->assertEquals(1, $category->getId());
+        $this->assertEquals('programming', $category->getName());
     }
 }

@@ -1,0 +1,10 @@
+  TDDIntro\Domain\Entity\Category:
+      type: entity
+      table: Categories
+      id:
+          id:
+              type: bigint
+      fields:
+          name:
+              type: string
+              length: 140

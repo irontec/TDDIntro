@@ -15,10 +15,11 @@ class BookEntityTest extends \PHPUnit_Framework_TestCase
             ->method('getName')
             ->willReturn('programming');
 
-        $book = new Book('Clean code', 'Martin Fowler', new \DateTime(), $mockCategory);
+        $book = new Book(1, 'Clean code', 'Robert C. Martin', new \DateTime(), $mockCategory);
 
+        $this->assertEquals(1, $book->getId());
         $this->assertEquals('Clean code', $book->getTitle());
-        $this->assertEquals('Martin Fowler', $book->getAuthor());
+        $this->assertEquals('Robert C. Martin', $book->getAuthor());
         $this->asserttrue($book->getDatePublished() instanceof \DateTime);
 
         $this->assertEquals('programming', $book->getCategory()->getName());
