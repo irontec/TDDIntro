@@ -20,7 +20,7 @@
 
     <filter>
         <whitelist>
-            <directory>src</directory>
+            <directory>core</directory>
             <directory>fw/silex/src</directory>
             <exclude>
             </exclude>

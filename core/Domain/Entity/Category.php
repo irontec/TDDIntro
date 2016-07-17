@@ -2,7 +2,6 @@
 
 namespace TDDIntro\Domain\Entity;
 
-
 class Category extends Entity
 {
     protected $name;

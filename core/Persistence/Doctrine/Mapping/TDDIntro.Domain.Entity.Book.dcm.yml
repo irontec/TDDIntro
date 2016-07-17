@@ -1,27 +1,21 @@
-  TDDIntro\Domain\Entity\Book:
-      type: entity
-      table: Books
-      id:
-          id:
-              type: bigint
-      fields:
-          name:
-              type: string
-              length: 140
-          author:
-              type: string
-              length: 259
-          published_date:
-              type: datetime
-      ManyToMany:
-          categories:
-              targetEntity: TDDIntro\Domain\Entity\Category
-              joinTable:
-                  name: books_categories
-                  joinColumns:
-                      book_id:
-                          referencedColumnName: id
-                  inverseJoinColumns:
-                      category_id:
-                          referencedColumnName: id
-                          unique: true
+TDDIntro\Domain\Entity\Book:
+    type: entity
+    table: Books
+    id:
+        id:
+            type: bigint
+    fields:
+        title:
+            type: string
+            length: 140
+        author:
+            type: string
+            length: 259
+        datePublished:
+            type: datetime
+    manyToOne:
+        category:
+            targetEntity: TDDIntro\Domain\Entity\Category
+            joinColumn:
+                name: category_id
+                referencedColumnName: id

@@ -1,0 +1,41 @@
+<?php
+
+$config = [];
+
+// Twig Configs.
+$config['twig'] = [
+    'twig.path' => __DIR__ . '/../resources/views',
+];
+
+// Doctrine Configs.
+$config['doctrine'] = [
+    'dbal' => [
+        'db.options' => [
+            'driver' => 'pdo_mysql',
+            'host' => 'HOST',
+            'dbname' => 'DB_NAME',
+            'user' => 'DB_USER',
+            'password' => 'PASS',
+            'charset' => 'utf8',
+            'driverOptions' => [1002 => 'SET NAMES utf8'],
+        ],
+    ],
+    'orm' => [
+        "orm.em.options" => [
+            "mappings" => [
+                [
+                    "type" => "yml",
+                    "namespace" => "TDDIntro\\Domain\\Entity",
+                    "path" => realpath(__DIR__ . "/../../../../src/Persistence/Doctrine/Mapping"),
+                ],
+            ],
+        ],
+    ]
+];
+
+// Console config.
+$config['console'] = [
+    'console.name' => 'TDD Intro Console Tool',
+    'console.version' => '0.0.1',
+    'console.project_directory' => __DIR__ . "/.."
+];
