@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": { 
-            "TDDIntro\\": ["src/"]
+            "TDDIntro\\": ["core/"]
         }
     },
     "require-dev": {
