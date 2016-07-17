@@ -6,6 +6,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BookController
 {
+    protected $view;
+
+    public function __construct(\Twig_Environment $view)
+    {
+        $this->view = $view;
+    }
+
     public function indexAction()
     {
         $books = [
@@ -22,23 +29,6 @@ class BookController
             ],
         ];
 
-        $content = '<section class="books">'
-            . '<h2>Books</h2>';
-        foreach ($books as $book) {
-            $content .= '<div class="book">'
-                . '<div class="name">' . $book['name'] . '</div>'
-                . '<div class="author">' . $book['author'] . '</div>'
-                . '<div class="published-date">' . $book['published_date']->format('Y-m-d') . '</div>'
-                . '<div class"categories">';
-            foreach ($book['categories'] as $category) {
-                $content .= '<div class="category">' . $category . '</div>';
-            }
-            $content .= '</div>'
-                . '</div>'
-                . '<hr>';
-        }
-        $content .= '</section>';
-
-        return new Response($content, 200);
+        return new Response($this->view->render('/books/index.html.twig', ['books' => $books], Response::HTTP_OK));
     }
 }

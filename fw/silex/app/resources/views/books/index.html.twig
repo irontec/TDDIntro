@@ -1,0 +1,17 @@
+{# fw/silex/app/resources/views/books/index.html.twig #}
+<section class="books">
+    <h2>Books</h2>
+    {% for book in books %}
+        <div class="book">
+            <div class="name">{{ book.name }}</div>
+            <div class="author">{{ book.author }}</div>
+            <div class="published-date">{{  book.published_date.format('Y-m-d') }}</div>
+            <div class="categories">
+                {% for category in book.categories %}
+                    <div class="category">{{ category }}</div>
+                {% endfor %}
+            </div>
+            <hr>
+        </div>
+    {% endfor %}
+</section>
