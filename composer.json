@@ -1,4 +1,14 @@
 {
+  "name": "irontec/tdd-intro",
+  "description": "Introduction to Test Driven Development in PHP.",
+  "authors": [
+    {
+      "name": "Koldo Picaza",
+      "homepage": "http://www.irontec.com",
+      "role": "Developer"
+    }
+  ],
+  "license": "EUPL",
   "autoload": {
     "psr-4": {
       "TDDIntro\\": ["core/"],
