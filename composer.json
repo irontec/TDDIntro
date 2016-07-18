@@ -8,7 +8,7 @@
       "role": "Developer"
     }
   ],
-  "license": "EUPL",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "TDDIntro\\": ["core/"],
